@@ -1,3 +1,5 @@
+#include <Keyboard.h>
+
 #if ARDUINO > 10605
 #include <Mouse.h>
 #endif  //ARDUINO > 10605
@@ -5,20 +7,22 @@
 #include <MouseTo.h>
 
 
-const byte pin = 10; //Initialize P10
+const byte pin10 = 10; //Initialize P10
+const byte pin11 = 11; //Initialize P11
 
 void setup() {
   Mouse.begin();
   MouseTo.setScreenResolution(2200, 1080);
   MouseTo.setCorrectionFactor(0.33);
-  pinMode(pin, INPUT_PULLUP);
+  pinMode(pin11, INPUT_PULLUP);
+  pinMode(pin10, INPUT_PULLUP);
   
 }
 
 void loop() {
 
   //Start program when pin 10 is connected to ground
-  while (digitalRead(pin) == LOW) {
+  while (digitalRead(pin10) == LOW) {
   
     delay(2000);
     
@@ -74,8 +78,12 @@ void loop() {
     Mouse.move(0, 0, 400);
     delay(200);
     Mouse.move(0, 0, 400);
+    delay(200);
+    Mouse.move(0, 0, 400);
+    delay(200);
+    Mouse.move(0, 0, 400);
     delay(600);
-
+    
     //Click next
     MouseTo.setTarget(930, 2200);      
     while (MouseTo.move() == false) {}
@@ -84,6 +92,8 @@ void loop() {
     delay(6000);
 
     //Click next
+    Mouse.click();
+    delay(2000);
     Mouse.click();
     delay(2000);
 
@@ -364,7 +374,15 @@ void loop() {
     //Return to home screen
     Mouse.click(MOUSE_MIDDLE);
     delay(600);
-    
-    while(1) {} //only runs the program one time
-  }
+
+
+  }    
+      while (digitalRead(pin11) == LOW) {
+        Keyboard.write(KEY_RIGHT_ARROW);
+        delay(600);
+        Keyboard.write(KEY_RIGHT_ARROW);
+        delay(600);
+        Keyboard.write(KEY_RETURN);
+        delay(600); 
+      }
 }
