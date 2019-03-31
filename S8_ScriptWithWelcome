@@ -9,6 +9,7 @@
 
 const byte pin10 = 10; //Initialize P10
 const byte pin11 = 11; //Initialize P11
+const byte pin6 = 6; //Initialize P11
 
 void setup() {
   Mouse.begin();
@@ -16,7 +17,8 @@ void setup() {
   MouseTo.setCorrectionFactor(0.33);
   pinMode(pin11, INPUT_PULLUP);
   pinMode(pin10, INPUT_PULLUP);
-  
+  pinMode(pin6, OUTPUT);
+
 }
 
 void loop() {
@@ -87,7 +89,7 @@ void loop() {
     //Click next
     MouseTo.setTarget(930, 2200);      
     while (MouseTo.move() == false) {}
-    delay(600);
+    delay(1000);
     Mouse.click();
     delay(6000);
 
@@ -375,6 +377,8 @@ void loop() {
     Mouse.click(MOUSE_MIDDLE);
     delay(600);
 
+    digitalWrite(pin6, HIGH);
+    
 
   }    
       while (digitalRead(pin11) == LOW) {
