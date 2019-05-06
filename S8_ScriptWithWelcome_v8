@@ -9,7 +9,7 @@
 
 const byte pin10 = 10; //Initialize P10
 const byte pin11 = 11; //Initialize P11
-const byte pin6 = 6; //Initialize P11
+const byte pin9 = 9; //Initialize P11
 
 void setup() {
   Mouse.begin();
@@ -17,7 +17,7 @@ void setup() {
   MouseTo.setCorrectionFactor(0.33);
   pinMode(pin11, INPUT_PULLUP);
   pinMode(pin10, INPUT_PULLUP);
-  pinMode(pin6, OUTPUT);
+  pinMode(pin9, OUTPUT);
 
 }
 
@@ -25,25 +25,25 @@ void loop() {
 
   //Start program when pin 10 is connected to ground
   while (digitalRead(pin10) == LOW) {
-  
+
     delay(2000);
-    
+
     //Set home location
-    MouseTo.setTarget(0, 0);      
+    MouseTo.setTarget(0, 0);
     while (MouseTo.move() == false) {}
     delay(2000);
 
-   /* //Clear low battery dialog
-    MouseTo.setTarget(900, 1380);      
-    while (MouseTo.move() == false) {}
-    delay(600);
-    Mouse.click();
-    delay(2000); */
-    
+    /* //Clear low battery dialog
+      MouseTo.setTarget(900, 1380);
+      while (MouseTo.move() == false) {}
+      delay(600);
+      Mouse.click();
+      delay(2000); */
+
     //initalize keyboard
     Mouse.click(MOUSE_MIDDLE);
     delay(600);
-    
+
     //Clear dialog
     Keyboard.write(KEY_RETURN);
     delay(1000);
@@ -53,7 +53,7 @@ void loop() {
     delay(3000);
 
     //Click next
-    MouseTo.setTarget(930, 2200);      
+    MouseTo.setTarget(930, 2200);
     while (MouseTo.move() == false) {}
     delay(600);
     Mouse.click();
@@ -67,54 +67,54 @@ void loop() {
     delay(2000);
 
     //Click agree to all
-   /* MouseTo.setTarget(120, 630);      
-    while (MouseTo.move() == false) {}
-    delay(600);
-    Mouse.click();
-    delay(2000);*/
+    /* MouseTo.setTarget(120, 630);
+      while (MouseTo.move() == false) {}
+      delay(600);
+      Mouse.click();
+      delay(2000);*/
     Keyboard.write(KEY_RETURN);
     delay(2000);
-    
+
 
     //Click next
-    MouseTo.setTarget(930, 2200);      
+    MouseTo.setTarget(930, 2200);
     while (MouseTo.move() == false) {}
     delay(600);
     Mouse.click();
     delay(6000);
 
     //Scroll down
-   /* MouseTo.setTarget(200, 600);      
-    while (MouseTo.move() == false) {}
-    delay(600);
-    Mouse.move(0, 0, 400);
-    delay(200);
-    Mouse.move(0, 0, 400);
-    delay(200);
-    Mouse.move(0, 0, 400);
-    delay(200);
-    Mouse.move(0, 0, 400);
-    delay(600);
-    
-    //Click next
-    MouseTo.setTarget(930, 2200);      
-    while (MouseTo.move() == false) {}
-    delay(1000); 
-    Mouse.click();
-    delay(6000); */
+    /* MouseTo.setTarget(200, 600);
+      while (MouseTo.move() == false) {}
+      delay(600);
+      Mouse.move(0, 0, 400);
+      delay(200);
+      Mouse.move(0, 0, 400);
+      delay(200);
+      Mouse.move(0, 0, 400);
+      delay(200);
+      Mouse.move(0, 0, 400);
+      delay(600);
 
-    
-    MouseTo.setTarget(930, 2000);      
+      //Click next
+      MouseTo.setTarget(930, 2200);
+      while (MouseTo.move() == false) {}
+      delay(1000);
+      Mouse.click();
+      delay(6000); */
+
+
+    MouseTo.setTarget(930, 2000);
     while (MouseTo.move() == false) {}
     delay(600);
     Mouse.click();
     delay(1000);
     Mouse.click();
-    delay(2000); 
-    
+    delay(2000);
 
 
-    
+
+
     //Say no to setup any security (lock screen, face recognition, etc.)
     Keyboard.write(KEY_TAB);
     delay(600);
@@ -132,50 +132,50 @@ void loop() {
     delay(600);
     Keyboard.write(KEY_RETURN);
     delay(600);
- 
+
     //click next
-    MouseTo.setTarget(930, 1530);      
+    MouseTo.setTarget(930, 1530);
     while (MouseTo.move() == false) {}
     delay(600);
     Mouse.click();
     delay(1000);
-    
+
     //Click skip anyway
-    MouseTo.setTarget(830, 1300);      
+    MouseTo.setTarget(830, 1300);
     while (MouseTo.move() == false) {}
     delay(600);
     Mouse.click();
     delay(2000);
 
     //click more
-    MouseTo.setTarget(930, 2000);      
+    MouseTo.setTarget(930, 2000);
     while (MouseTo.move() == false) {}
     delay(600);
     Mouse.click();
     delay(2000);
 
-    //MouseTo.setTarget(930, 2000);      
+    //MouseTo.setTarget(930, 2000);
     //while (MouseTo.move() == false) {}
     //delay(600);
     Mouse.click();
     delay(2000);
 
-    //MouseTo.setTarget(930, 2000);      
+    //MouseTo.setTarget(930, 2000);
     //while (MouseTo.move() == false) {}
     //delay(600);
     Mouse.click();
     delay(5000);
 
     //clear low battery
-    MouseTo.setTarget(950, 1300);      
+    MouseTo.setTarget(950, 1300);
     while (MouseTo.move() == false) {}
     delay(600);
     Mouse.click();
     delay(1000);
-    
-    
 
-    MouseTo.setTarget(980, 2200);      
+
+
+    MouseTo.setTarget(980, 2200);
     while (MouseTo.move() == false) {}
     delay(600);
     Mouse.click();
@@ -183,7 +183,7 @@ void loop() {
     Mouse.click();
     delay(4000);
 
-    MouseTo.setTarget(930, 1500);      
+    MouseTo.setTarget(930, 1500);
     while (MouseTo.move() == false) {}
     delay(600);
     Mouse.click();
@@ -193,7 +193,7 @@ void loop() {
     Mouse.move(0, 0, 400);
     delay(2000);
 
-    MouseTo.setTarget(980, 2200);      
+    MouseTo.setTarget(980, 2200);
     while (MouseTo.move() == false) {}
     delay(600);
     Mouse.click();
@@ -207,38 +207,38 @@ void loop() {
     delay(600);
     Keyboard.write(KEY_RETURN);
     delay(2000);
-    
 
-    MouseTo.setTarget(980, 2200);      
+
+    MouseTo.setTarget(980, 2200);
     while (MouseTo.move() == false) {}
     delay(600);
     Mouse.click();
     delay(600);
     Mouse.click();
     delay(20000);
-    
+
     /////////////////////////////////////////////////////////////////////////////
 
-    
-   //Click low battery prompt if phone is below 5%
+
+    //Click low battery prompt if phone is below 5%
     Keyboard.write(KEY_RETURN);
     delay(600);
     Keyboard.write(KEY_RETURN);
     delay(600);
 
     /*
-    //Move and drag to unlock the screen, then move to top left
-    MouseTo.setTarget(525, 1700); 
-    while (MouseTo.move() == false) {}
-    delay(600);
-    Mouse.press();
-    MouseTo.setTarget(0, 0);
-    while (MouseTo.move() == false) {}
-    Mouse.release();
-    delay(600);
+      //Move and drag to unlock the screen, then move to top left
+      MouseTo.setTarget(525, 1700);
+      while (MouseTo.move() == false) {}
+      delay(600);
+      Mouse.press();
+      MouseTo.setTarget(0, 0);
+      while (MouseTo.move() == false) {}
+      Mouse.release();
+      delay(600);
     */
-    
-    
+
+
     //Make sure phone is on home screen
     Mouse.click(MOUSE_MIDDLE);
     delay(600);
@@ -246,84 +246,84 @@ void loop() {
     Keyboard.write(KEY_RETURN);
     delay(800);
     Keyboard.write(KEY_RETURN);
-    delay(3000);  
+    delay(3000);
 
-    MouseTo.setTarget(490, 300);      
+    MouseTo.setTarget(490, 300);
     while (MouseTo.move() == false) {}
     delay(600);
     Mouse.click();
     delay(1000);
-    
+
     /*
-    //Click to open pull down menu
-    MouseTo.setTarget(0, 0);      
-    while (MouseTo.move() == false) {}
-    delay(600);
-    Mouse.click();
-    delay(1000);
+      //Click to open pull down menu
+      MouseTo.setTarget(0, 0);
+      while (MouseTo.move() == false) {}
+      delay(600);
+      Mouse.click();
+      delay(1000);
 
-    //Move and click settings button
-    MouseTo.setTarget(975, 70);      
-    while (MouseTo.move() == false) {}
-    delay(600);
-    Mouse.click();
-    delay(1000);
+      //Move and click settings button
+      MouseTo.setTarget(975, 70);
+      while (MouseTo.move() == false) {}
+      delay(600);
+      Mouse.click();
+      delay(1000);
 
 
-    //Move in position and scroll up to make sure the page is in the correct orientation
-    MouseTo.setTarget(200, 600);      
-    while (MouseTo.move() == false) {}
-    delay(1000);
-    Mouse.move(0, 0, -400);
-    delay(50);
-    Mouse.move(0, 0, -400);
-    delay(1000);
-    
-    //Move to Apps setting and click
-    MouseTo.setTarget(0, 1720);
-    while (MouseTo.move() == false) {}
-    delay(600);
-    Mouse.click();
-    delay(2000);
+      //Move in position and scroll up to make sure the page is in the correct orientation
+      MouseTo.setTarget(200, 600);
+      while (MouseTo.move() == false) {}
+      delay(1000);
+      Mouse.move(0, 0, -400);
+      delay(50);
+      Mouse.move(0, 0, -400);
+      delay(1000);
 
-    //Scroll to settings app and click
-    Mouse.move(100, 127, 400);
-    delay(50);
-    Mouse.move(0, 127, 400);
-    delay(50);
-    Mouse.move(0, 40, 400);
-    delay(50);
-    Mouse.move(0, 0, 400);
-    delay(600);
-    Mouse.click();
-    delay(600);
-    
-    //Move and click on storage option
-    MouseTo.setTarget(900, 1400);      
-    while (MouseTo.move() == false) {}
-    delay(600);
-    Mouse.click();
-    delay(600);
+      //Move to Apps setting and click
+      MouseTo.setTarget(0, 1720);
+      while (MouseTo.move() == false) {}
+      delay(600);
+      Mouse.click();
+      delay(2000);
 
-    //Move and click on clear data
-    MouseTo.setTarget(800, 830);      
-    while (MouseTo.move() == false) {}
-    delay(600);
-    Mouse.click();
-    delay(600);
+      //Scroll to settings app and click
+      Mouse.move(100, 127, 400);
+      delay(50);
+      Mouse.move(0, 127, 400);
+      delay(50);
+      Mouse.move(0, 40, 400);
+      delay(50);
+      Mouse.move(0, 0, 400);
+      delay(600);
+      Mouse.click();
+      delay(600);
 
-    //Move and click dialog that confirms deletion
-    MouseTo.setTarget(870, 1250);      
-    while (MouseTo.move() == false) {}
-    delay(600);
-    Mouse.click();
-    delay(600);
-*/
+      //Move and click on storage option
+      MouseTo.setTarget(900, 1400);
+      while (MouseTo.move() == false) {}
+      delay(600);
+      Mouse.click();
+      delay(600);
+
+      //Move and click on clear data
+      MouseTo.setTarget(800, 830);
+      while (MouseTo.move() == false) {}
+      delay(600);
+      Mouse.click();
+      delay(600);
+
+      //Move and click dialog that confirms deletion
+      MouseTo.setTarget(870, 1250);
+      while (MouseTo.move() == false) {}
+      delay(600);
+      Mouse.click();
+      delay(600);
+    */
     //Reset position
-    MouseTo.setTarget(0, 0);      
+    MouseTo.setTarget(0, 0);
     while (MouseTo.move() == false) {}
     delay(600);
-    
+
     //Make sure phone is on home screen
     Mouse.click(MOUSE_MIDDLE);
     delay(600);
@@ -331,9 +331,9 @@ void loop() {
     //Click to open pull down menu
     Mouse.click();
     delay(600);
-    
+
     //Move and click settings button
-    MouseTo.setTarget(975, 70);      
+    MouseTo.setTarget(975, 70);
     while (MouseTo.move() == false) {}
     delay(600);
     Mouse.click();
@@ -348,25 +348,25 @@ void loop() {
     delay(50);
     Mouse.move(0, 0, 400);
     delay(600);
-    MouseTo.setTarget(530, 1975);      
+    MouseTo.setTarget(530, 1975);
     while (MouseTo.move() == false) {}
     delay(600);
     Mouse.click();
     delay(1000);
 
     //click software info
-    MouseTo.setTarget(530, 1700);      
+    MouseTo.setTarget(530, 1700);
     while (MouseTo.move() == false) {}
     delay(600);
     Mouse.click();
     delay(1000);
-    
+
     //Scroll, move, and click on build number 10 times.
-    MouseTo.setTarget(530, 1400);      
+    MouseTo.setTarget(530, 1400);
     while (MouseTo.move() == false) {}
     delay(600);
     int count = 0;
-    while (count < 10){
+    while (count < 10) {
       Mouse.click();
       delay(100);
       count++;
@@ -383,26 +383,26 @@ void loop() {
     delay(50);
     Mouse.move(0, 0, 400);
     delay(600);
-    MouseTo.setTarget(500, 2000);      
+    MouseTo.setTarget(500, 2000);
     while (MouseTo.move() == false) {}
     delay(600);
     Mouse.click();
     delay(600);
 
     //Toggle Developer options on and off to clear any previous user settings
-    MouseTo.setTarget(950, 280);      
+    MouseTo.setTarget(950, 280);
     while (MouseTo.move() == false) {}
     delay(600);
     Mouse.click();
     delay(600);
     Mouse.click();
     delay(600);
-    MouseTo.setTarget(900, 1325);      
+    MouseTo.setTarget(900, 1325);
     while (MouseTo.move() == false) {}
     delay(600);
     Mouse.click();
     delay(600);
-    
+
     //Scroll, Move, and click enable USB debugging button
     Keyboard.write(KEY_TAB);
     delay(200);
@@ -429,26 +429,27 @@ void loop() {
     Keyboard.write(KEY_TAB);
     delay(200);
     Keyboard.write(KEY_RETURN);
-    delay(600); 
+    delay(600);
     Keyboard.write(KEY_TAB);
     delay(200);
     Keyboard.write(KEY_RETURN);
-    delay(600); 
-    
+    delay(600);
+
+
+
     //Return to home screen
     Mouse.click(MOUSE_MIDDLE);
     delay(600);
+    digitalWrite(pin9, HIGH);
 
-    digitalWrite(pin6, HIGH);
-    
 
-  }    
-      while (digitalRead(pin11) == LOW) {
-        Keyboard.write(KEY_RIGHT_ARROW);
-        delay(600);
-        Keyboard.write(KEY_RIGHT_ARROW);
-        delay(600);
-        Keyboard.write(KEY_RETURN);
-        delay(600); 
-      }
+  }
+  while (digitalRead(pin11) == LOW) {
+    Keyboard.write(KEY_RIGHT_ARROW);
+    delay(600);
+    Keyboard.write(KEY_RIGHT_ARROW);
+    delay(600);
+    Keyboard.write(KEY_RETURN);
+    delay(600);
+  }
 }
